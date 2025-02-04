@@ -1,0 +1,196 @@
+
+:root{
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow: hidden;
+    background: url(https://img.freepik.com/free-vector/abstract-grey-shapes-background_1085-185.jpg?t=st=1738678371~exp=1738681971~hmac=1ce27e6675d34d847222a4a219b2fcfd4016d47dc223ad31112fada41d1b0149&w=1380);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    background-blend-mode: multiply;
+}
+
+.header{
+    padding: -10px;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width: 40%;
+    background-color: yellow;
+    border: 20px solid black;
+    font-family: 'Creepster', sans-serif;
+    z-index: 30;
+    
+}
+.header h1{
+    font-size: 64px;
+}
+.header p{
+    padding-top: -10px;
+    margin-top: -10px;
+}
+.content{
+    position: absolute;
+    top: 200px;
+    bottom: 50px;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
+    width: 70%;
+    max-width: 700px;
+    min-width: 400px;
+    padding: 50px;
+    padding-top: 100px;
+    overflow-y: auto;
+    background-color: white;
+    z-index: 20;
+    background-color: yellow;
+    border: 20px solid black;
+}
+
+.content section{
+    background-color: rgb(249, 255, 128);
+    border: 5px solid  rgb(181, 187, 62);
+    padding: 20px;
+}
+
+hr{
+    height: 10px;
+    background-color: black;
+    border: 0;
+}
+
+.submit-field{
+    display: flex;
+    flex-direction: column;
+}
+.submit-field input[type="submit"]{
+    width: 60%;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 25px;
+    padding: 10px;
+}
+
+/* FLUFFING STRIPES EFFECT */
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+.stripe {
+    position: absolute;
+    width: 300%;
+    height: 50px;
+    background: repeating-linear-gradient(
+        45deg,
+        yellow,
+        yellow 20px,
+        black 20px,
+        black 40px
+    );
+    border: 3px solid yellow;
+    opacity: 0.9;
+    z-index: -1;
+}
+.stripe-left{
+    animation: moveStripesLeft 5s linear infinite
+}
+.stripe-upright{
+    animation: moveStripesUpRight 5s linear infinite
+}
+.stripe-downright{
+    animation: moveStripesDownRight 5s linear infinite
+}
+.stripe-up{
+    animation: moveStripesUp 5s linear infinite
+}
+@keyframes moveStripesUp {
+    0% {
+        transform: rotate(90deg) translateX(-200px) translateY(0);
+    }
+    50% {
+        transform: rotate(95deg) translateX(200px) translateY(-100px);
+    }
+    100% {
+        transform: rotate(90deg) translateX(-200px) translateY(0);
+    }
+}
+@keyframes moveStripesLeft {
+    0% {
+        transform: rotate(0deg) translateX(-200px) translateY(0);
+    }
+    50% {
+        transform: rotate(5deg) translateX(200px) translateY(-100px);
+    }
+    100% {
+        transform: rotate(0deg) translateX(-200px) translateY(0);
+    }
+}
+
+@keyframes moveStripesUpRight {
+    0% {
+        transform: rotate(-10deg) translateX(200px) translateY(-100px);
+    }
+    50% {
+        transform: rotate(-15deg) translateX(-200px) translateY(0);
+    }
+    100% {
+        transform: rotate(-10deg) translateX(200px) translateY(-100px);
+    }
+}
+@keyframes moveStripesDownRight {
+    0% {
+        transform: rotate(20deg) translateX(200px) translateY(-100px);
+    }
+    50% {
+        transform: rotate(15deg) translateX(-200px) translateY(0);
+    }
+    100% {
+        transform: rotate(20deg) translateX(200px) translateY(-100px);
+    }
+}
+
+.stripe:nth-child(1) {
+    top: 20%;
+    left: -50%;
+    animation-duration: 60s;
+}
+.stripe:nth-child(2) {
+    top: 30%;
+    left: -50%;
+    animation-duration: 40s;
+}
+.stripe:nth-child(3) {
+    top: 50%;
+    left: -50%;
+    animation-duration: 70s;
+}
+.stripe:nth-child(4) {
+    top: 50%;
+    left: -50%;
+    animation-duration: 50s;
+}
+.stripe:nth-child(5) {
+    top: 70%;
+    left: -50%;
+    animation-duration: 30s;
+}
+.stripe:nth-child(6) {
+    top: 50%;
+    left: -50%;
+    animation-duration: 10s;
+}
+.stripe:nth-child(7) {
+    top: 50%;
+    left: -70%;
+    animation-duration: 5s;
+}
+.stripe:nth-child(8) {
+    top: 50%;
+    left: -150%;
+    animation-duration: 12s;
+}

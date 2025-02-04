@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danger Stripes Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="stripe stripe-upright"></div>
+        <div class="stripe stripe-left"></div>
+        <div class="stripe stripe-downright"></div>
+        <div class="stripe stripe-upright"></div>
+        <div class="stripe stripe-upright"></div>
+        <div class="stripe stripe-upright"></div>
+        <div class="stripe stripe-up"></div>
+        <div class="stripe stripe-up"></div> 
+    </div>
+
+    <header class="header">
+        <h1 id="title">MurderCrime Mystery</h1>
+        <p id="description">Give us a short explanation as to what has happened</p>
+    </header>
+    <div class="content">
+
+        <form id="survey-form">
+
+            <section id="informants-info">
+                <h2>Informants information</h2>
+               <label id="name-label">
+                    <p>What is the your name?</p>
+                    <input id="name" type="text" placeholder="Give your name in here" required>
+               </label>
+                <label id="email-label">
+                    <p>What is the your email?</p>
+                    <input id="email" type="email" placeholder="Give your email in here" required>
+                </label> 
+            </section>
+
+            <hr>
+
+            <section id="suspect-info">
+                <h2>Suspects information</h2>
+                <label>
+                    <p>Do you have suspects name? (optional)</p>
+                    <input id="suspect-name" type="text" placeholder="Give your suspects name in here">
+                </label>
+                <label id="number-label">
+                    <p>How old you would describe your suspect?</p>
+                    <input id="number" type="number" min="0" max="120" placeholder="Put suspects age">
+                </label>
+                <label>
+                    <p>What gender was the suspect?</p>
+                    <select id="dropdown">
+                        <option>(please select gender)</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </label>
+                <label>
+                    <p>What did the suspect do?</p>
+                    <label><input type="radio" name="accused-of" value="murder">Murder</label>
+                    <label><input type="radio" name="accused-of" value="robbery">robbery</label>
+                    <label><input type="radio" name="accused-of" value="taxfraud">Tax Fraud</label>
+                    <label><input type="radio" name="accused-of" value="sexual-assault">Sexual Assault</label>
+                    <label><input type="radio" name="accused-of" value="other">Other</label>
+                </label>
+                <label>
+                    <p>Please describe further what suspect do</p>
+                    <textarea placeholder="Write anything that could benefit the police"></textarea>
+                </label>
+            </section>
+
+            <hr>
+
+            <section class="submit-field">
+                <label><input type="checkbox" name="validation1" value="valid1">I ensure that the information I have given is correct</label>
+                <label><input type="checkbox" name="validation2" value="valid2">I can be contacted for further questions via email</label>
+                <input id="submit" type="submit" value="Submit">
+            </section>
+            
+        </form>
+    </div>
+</body>
+</html>
