@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Computer Chips</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+    <main id="main" class="container">
+        <h1 id="title">The History of Computer Chips</h1>
+        <div id="img-div" class="image-container">
+            <img id="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Intel_C4004.jpg/440px-Intel_C4004.jpg" style="display: block; margin: 0 auto;">
+            <figcaption id="img-caption">The Intel 4004, the first commercial microprocessor, released in 1971.</figcaption>
+        </div>
+        <div id="tribute-info" class="info">
+            <p>
+                The history of computer chips dates back to the 1950s when the first transistors were used in computing. In 1958, Jack Kilby of Texas Instruments invented the first integrated circuit, laying the foundation for modern computer chips. 
+            </p>
+            <p>
+                The 1970s saw the rise of microprocessors, starting with the Intel 4004 in 1971, which was the first commercially available microprocessor. This paved the way for personal computing, leading to the development of chips like the Intel 8080 and Motorola 6800.
+            </p>
+            <p>
+                Throughout the 1980s and 1990s, advancements in chip design and manufacturing processes allowed for increasing computational power. Companies like Intel, AMD, and IBM pushed the boundaries with faster and more efficient processors.
+            </p>
+            <p>
+                In the 21st century, semiconductor technology evolved rapidly with the introduction of multi-core processors, nanometer-scale manufacturing, and AI-optimized chips. Modern chips power everything from smartphones to supercomputers, driving innovation in multiple industries.
+            </p>
+        </div>
+        <a id="tribute-link" href="https://en.wikipedia.org/wiki/Microprocessor" target="_blank" rel="noopener noreferrer">Learn more about Computer Chips</a>
+    </main>
+    <script>
+        const canvas = document.getElementById("matrixCanvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        const fontSize = 32;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = Array(columns).fill(0);
+        const speedFactor = 0.4;
+
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = "purple";
+            ctx.font = `${fontSize}px monospace`;
+            
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                const x = i * fontSize;
+                const y = drops[i] * fontSize;
+                
+                ctx.fillText(text, x, y);
+                
+                if (y > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        function animate() {
+            draw();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
